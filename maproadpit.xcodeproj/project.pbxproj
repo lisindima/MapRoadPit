@@ -32,6 +32,7 @@
 		CBD896D5237A78B0008CF480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBD896DB237A795F008CF480 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CBD896DE237A813B008CF480 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CBD896E3237AAA90008CF480 /* maproadpit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = maproadpit.entitlements; sourceTree = "<group>"; };
 		D8325C95CEAA69F61E9C59FA /* Pods-maproadpit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maproadpit.debug.xcconfig"; path = "Target Support Files/Pods-maproadpit/Pods-maproadpit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +87,7 @@
 		CBD896C6237A78AC008CF480 /* maproadpit */ = {
 			isa = PBXGroup;
 			children = (
+				CBD896E3237AAA90008CF480 /* maproadpit.entitlements */,
 				CBD896DD237A8128008CF480 /* Extensions */,
 				CBD896C7237A78AC008CF480 /* AppDelegate.swift */,
 				CBD896C9237A78AC008CF480 /* SceneDelegate.swift */,
@@ -377,6 +379,7 @@
 			baseConfigurationReference = D8325C95CEAA69F61E9C59FA /* Pods-maproadpit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = maproadpit/maproadpit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"maproadpit/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
@@ -398,6 +401,7 @@
 			baseConfigurationReference = 100698BE8256DAC42D98FF05 /* Pods-maproadpit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = maproadpit/maproadpit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"maproadpit/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
