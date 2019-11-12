@@ -8,9 +8,10 @@
 
 import SwiftUI
 import CoreLocation
+import PartialSheet
 
 struct Landmark: Equatable {
-    static func ==(lhs: Landmark, rhs: Landmark) -> Bool {
+    static func == (lhs: Landmark, rhs: Landmark) -> Bool {
         lhs.id == rhs.id
     }
     
@@ -27,34 +28,38 @@ struct ContentView: View {
     ]
     
     @State var selectedLandmark: Landmark? = nil
+    @State private var modalPresented: Bool = false
+    @State private var longer: Bool = false
     
     var body: some View {
-        ZStack {
-            MapView(landmarks: $landmarks,
-                    selectedLandmark: $selectedLandmark)
-                .edgesIgnoringSafeArea(.vertical)
-            VStack {
-                Spacer()
-                Button(action: {
-                    self.selectNextLandmark()
-                }) {
-                    Text("Next")
-                        .foregroundColor(.black)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(8)
-                        .shadow(radius: 3)
-                        .padding(.bottom)
+        NavigationView {
+            ZStack {
+                MapView(landmarks: $landmarks, selectedLandmark: $selectedLandmark)
+                    .edgesIgnoringSafeArea(.vertical)
+                VStack {
+                    Spacer()
+                    Button(action: {
+                        self.modalPresented = true
+                    }) {
+                        Text("Список")
+                            .foregroundColor(.black)
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(8)
+                            .shadow(radius: 10)
+                            .padding(.bottom)
+                    }
                 }
             }
-        }
-    }
-    
-    private func selectNextLandmark() {
-        if let selectedLandmark = selectedLandmark, let currentIndex = landmarks.firstIndex(where: { $0 == selectedLandmark }), currentIndex + 1 < landmarks.endIndex {
-            self.selectedLandmark = landmarks[currentIndex + 1]
-        } else {
-            selectedLandmark = landmarks.first
+            .partialSheet(presented: $modalPresented) {
+                VStack {
+                    ScrollView {
+                        Text("dddd")
+                        Text("dsdsd")
+                    }
+                    .frame(height: 300)
+                }
+            }
         }
     }
 }
