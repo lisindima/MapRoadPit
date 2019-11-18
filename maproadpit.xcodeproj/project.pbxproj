@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B00C8F76B951789A3052C073 /* Pods_maproadpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C004D5D86014509AFF47F7 /* Pods_maproadpit.framework */; };
+		CB4B284423825F6600E11A47 /* LocationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B284323825F6600E11A47 /* LocationStore.swift */; };
+		CB4B28462382792D00E11A47 /* infoAPP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B28452382792D00E11A47 /* infoAPP.swift */; };
 		CBD896C8237A78AC008CF480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896C7237A78AC008CF480 /* AppDelegate.swift */; };
 		CBD896CA237A78AC008CF480 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896C9237A78AC008CF480 /* SceneDelegate.swift */; };
 		CBD896CC237A78AC008CF480 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896CB237A78AC008CF480 /* ContentView.swift */; };
@@ -16,12 +18,13 @@
 		CBD896D4237A78B0008CF480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBD896D2237A78B0008CF480 /* LaunchScreen.storyboard */; };
 		CBD896DC237A795F008CF480 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBD896DB237A795F008CF480 /* GoogleService-Info.plist */; };
 		CBD896DF237A813B008CF480 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896DE237A813B008CF480 /* MapView.swift */; };
-		CBD896E2237A94D7008CF480 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = CBD896E1237A94D7008CF480 /* PartialSheet */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		06C004D5D86014509AFF47F7 /* Pods_maproadpit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_maproadpit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		100698BE8256DAC42D98FF05 /* Pods-maproadpit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maproadpit.release.xcconfig"; path = "Target Support Files/Pods-maproadpit/Pods-maproadpit.release.xcconfig"; sourceTree = "<group>"; };
+		CB4B284323825F6600E11A47 /* LocationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStore.swift; sourceTree = "<group>"; };
+		CB4B28452382792D00E11A47 /* infoAPP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoAPP.swift; sourceTree = "<group>"; };
 		CBD896C4237A78AC008CF480 /* maproadpit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maproadpit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD896C7237A78AC008CF480 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD896C9237A78AC008CF480 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBD896E2237A94D7008CF480 /* PartialSheet in Frameworks */,
 				B00C8F76B951789A3052C073 /* Pods_maproadpit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,10 +90,12 @@
 			isa = PBXGroup;
 			children = (
 				CBD896E3237AAA90008CF480 /* maproadpit.entitlements */,
-				CBD896DD237A8128008CF480 /* Extensions */,
 				CBD896C7237A78AC008CF480 /* AppDelegate.swift */,
+				CBD896DE237A813B008CF480 /* MapView.swift */,
 				CBD896C9237A78AC008CF480 /* SceneDelegate.swift */,
+				CB4B284323825F6600E11A47 /* LocationStore.swift */,
 				CBD896CB237A78AC008CF480 /* ContentView.swift */,
+				CB4B28452382792D00E11A47 /* infoAPP.swift */,
 				CBD896CD237A78B0008CF480 /* Assets.xcassets */,
 				CBD896D2237A78B0008CF480 /* LaunchScreen.storyboard */,
 				CBD896DB237A795F008CF480 /* GoogleService-Info.plist */,
@@ -107,14 +111,6 @@
 				CBD896D0237A78B0008CF480 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CBD896DD237A8128008CF480 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				CBD896DE237A813B008CF480 /* MapView.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +132,6 @@
 			);
 			name = maproadpit;
 			packageProductDependencies = (
-				CBD896E1237A94D7008CF480 /* PartialSheet */,
 			);
 			productName = maproadpit;
 			productReference = CBD896C4237A78AC008CF480 /* maproadpit.app */;
@@ -167,7 +162,6 @@
 			);
 			mainGroup = CBD896BB237A78AC008CF480;
 			packageReferences = (
-				CBD896E0237A94D7008CF480 /* XCRemoteSwiftPackageReference "PartialSheet" */,
 			);
 			productRefGroup = CBD896C5237A78AC008CF480 /* Products */;
 			projectDirPath = "";
@@ -239,10 +233,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4B284423825F6600E11A47 /* LocationStore.swift in Sources */,
 				CBD896C8237A78AC008CF480 /* AppDelegate.swift in Sources */,
 				CBD896DF237A813B008CF480 /* MapView.swift in Sources */,
 				CBD896CA237A78AC008CF480 /* SceneDelegate.swift in Sources */,
 				CBD896CC237A78AC008CF480 /* ContentView.swift in Sources */,
+				CB4B28462382792D00E11A47 /* infoAPP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,25 +436,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CBD896E0237A94D7008CF480 /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CBD896E1237A94D7008CF480 /* PartialSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CBD896E0237A94D7008CF480 /* XCRemoteSwiftPackageReference "PartialSheet" */;
-			productName = PartialSheet;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBD896BC237A78AC008CF480 /* Project object */;
 }
