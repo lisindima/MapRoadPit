@@ -9,25 +9,12 @@
 import SwiftUI
 import CoreLocation
 
-struct Landmark: Equatable {
-    static func == (lhs: Landmark, rhs: Landmark) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    let id = UUID().uuidString
-    let name: String
-    let location: CLLocationCoordinate2D
-}
-
 struct ContentView: View {
-    @EnvironmentObject var session: LocationStore
-    @State var landmarks: [Landmark] = [
-        Landmark(name: "Sydney Harbour Bridge", location: .init(latitude: -33.852222, longitude: 151.210556)),
-        Landmark(name: "Brooklyn Bridge", location: .init(latitude: 40.706, longitude: -73.997)),
-        Landmark(name: "Golden Gate Bridge", location: .init(latitude: 37.819722, longitude: -122.478611))
-    ]
     
-    @State private var selectedLandmark: Landmark? = nil
+    @EnvironmentObject var session: LocationStore    
+    @State var landmarks = [DataLocation]()
+    
+    @State private var selectedLandmark: DataLocation? = nil
     @State private var longer: Bool = false
     @State private var modalView: Bool = false
     @State private var choiseModal: Int = 1

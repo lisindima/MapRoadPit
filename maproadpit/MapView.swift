@@ -14,16 +14,17 @@ final class LandmarkAnnotation: NSObject, MKAnnotation {
     let title: String?
     let coordinate: CLLocationCoordinate2D
 
-    init(landmark: Landmark) {
+    init(landmark: DataLocation) {
         self.id = landmark.id
-        self.title = landmark.name
-        self.coordinate = landmark.location
+        self.title = landmark.nameDB
+        self.coordinate = landmark.locationDB
     }
 }
 
 struct MapView: UIViewRepresentable {
-    @Binding var landmarks: [Landmark]
-    @Binding var selectedLandmark: Landmark?
+    
+    @Binding var landmarks: [DataLocation]
+    @Binding var selectedLandmark: DataLocation?
     
     func makeUIView(context: Context) -> MKMapView {
         let map = MKMapView()

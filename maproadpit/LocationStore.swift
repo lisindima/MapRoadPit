@@ -8,28 +8,42 @@
 
 import SwiftUI
 import Firebase
+import CoreLocation
 
 final class LocationStore: ObservableObject {
     
-    @Published var latitudeDB: Double!
-    @Published var longitudeDB: Double!
-    @Published var nameDB: String!
+    @Published var dataLocation = [DataLocation]()
     
     func loadData() {
         let db = Firestore.firestore()
-        db.collection("dataPit").document("lbwkJ69WHUf2iKNydeaW")
-        .addSnapshotListener { documentSnapshot, error in
-            if let document = documentSnapshot {
-                let geopoint = document.get("geopoint") as? GeoPoint
-                self.latitudeDB = geopoint!.latitude
-                self.longitudeDB = geopoint!.longitude
-                self.nameDB = document.get("name") as? String
-                print(self.latitudeDB!)
-                print(self.longitudeDB!)
-                print(self.nameDB!)
-            } else {
-                print("Ошибка")
+        db.collection("dataPit").document("listPit").collection("pit")
+            .addSnapshotListener { (querySnapshot, err) in
+            if err != nil {
+                print((err?.localizedDescription)!)
+                return
+            }
+            for i in querySnapshot!.documentChanges {
+                if i.type == .added {
+                    let geopoint = i.document.get("geopoint") as? GeoPoint
+                    let latitudeDB = geopoint!.latitude
+                    let longitudeDB = geopoint!.longitude
+                    let locationDB = CLLocationCoordinate2D(latitude: latitudeDB, longitude: longitudeDB)
+                    let nameDB = i.document.get("nameDB") as? String
+                    let id = i.document.documentID
+                    self.dataLocation.append(DataLocation(id: id, nameDB: nameDB!, locationDB: locationDB))
+                    print(self.dataLocation)
+                }
             }
         }
     }
+}
+
+struct DataLocation: Identifiable, Equatable {
+    
+    static func == (lhs: DataLocation, rhs: DataLocation) -> Bool {
+        lhs.id == rhs.id
+    }    
+    var id: String
+    var nameDB: String
+    var locationDB: CLLocationCoordinate2D
 }

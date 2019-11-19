@@ -91,8 +91,8 @@
 			children = (
 				CBD896E3237AAA90008CF480 /* maproadpit.entitlements */,
 				CBD896C7237A78AC008CF480 /* AppDelegate.swift */,
-				CBD896DE237A813B008CF480 /* MapView.swift */,
 				CBD896C9237A78AC008CF480 /* SceneDelegate.swift */,
+				CBD896DE237A813B008CF480 /* MapView.swift */,
 				CB4B284323825F6600E11A47 /* LocationStore.swift */,
 				CBD896CB237A78AC008CF480 /* ContentView.swift */,
 				CB4B28452382792D00E11A47 /* infoAPP.swift */,
