@@ -38,7 +38,7 @@ final class LocationStore: ObservableObject {
     }
 }
 
-struct DataLocation: Identifiable, Equatable {
+struct DataLocation: Equatable {
     
     static func == (lhs: DataLocation, rhs: DataLocation) -> Bool {
         lhs.id == rhs.id

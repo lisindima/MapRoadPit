@@ -12,17 +12,14 @@ import CoreLocation
 struct ContentView: View {
     
     @EnvironmentObject var session: LocationStore    
-    @State var landmarks = [DataLocation]()
-    
     @State private var selectedLandmark: DataLocation? = nil
-    @State private var longer: Bool = false
     @State private var modalView: Bool = false
     @State private var choiseModal: Int = 1
     
     var body: some View {
         NavigationView {
             ZStack {
-                MapView(landmarks: $landmarks, selectedLandmark: $selectedLandmark)
+                MapView(landmarks: $session.dataLocation, selectedLandmark: $selectedLandmark)
                     .edgesIgnoringSafeArea(.vertical)
                 VStack {
                     Spacer()
@@ -54,10 +51,10 @@ struct ContentView: View {
             }))
             .sheet(isPresented: $modalView) {
                 if self.choiseModal == 1 {
-                    listPit()
+                    listPit(modalView: self.$modalView)
                 }
                 if self.choiseModal == 2 {
-                    newPit()
+                    newPit(modalView: self.$modalView)
                 }
                 if self.choiseModal == 3 {
                     Setting(modalView: self.$modalView)
@@ -70,6 +67,7 @@ struct ContentView: View {
 
 
 struct listPit: View {
+    @Binding var modalView: Bool
     var body: some View {
         NavigationView {
             ScrollView {
@@ -80,12 +78,25 @@ struct listPit: View {
 }
 
 struct newPit: View {
+    @Binding var modalView: Bool
     var body: some View {
         NavigationView {
-            ScrollView {
-                Text("newPit")
+            VStack {
+                NewMapView()
+                    .edgesIgnoringSafeArea(.top)
+                    .frame(height: 300)
+                Spacer()
             }
+            .navigationBarTitle(Text("Добавить"), displayMode: .inline)
+            .navigationBarItems(trailing: Button (action: {
+                self.modalView = false
+            })
+            {
+                Text("Готово")
+                    .bold()
+            })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
