@@ -43,13 +43,13 @@ struct ContentView: View {
                 self.modalView = true
             })
             {
-                Image(systemName: "info.circle.fill")
+                Image(systemName: "gear")
                     .imageScale(.large)
             },trailing: Button (action: {
                 self.choiseModal = 1
                 self.modalView = true
             }, label: {
-                Image(systemName: "line.horizontal.3.decrease.circle.fill")
+                Image(systemName: "line.horizontal.3.decrease.circle")
                     .imageScale(.large)
             }))
             .sheet(isPresented: $modalView) {
@@ -60,10 +60,11 @@ struct ContentView: View {
                     newPit()
                 }
                 if self.choiseModal == 3 {
-                    infoAPP()
+                    Setting(modalView: self.$modalView)
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

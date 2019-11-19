@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		B00C8F76B951789A3052C073 /* Pods_maproadpit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C004D5D86014509AFF47F7 /* Pods_maproadpit.framework */; };
 		CB4B284423825F6600E11A47 /* LocationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B284323825F6600E11A47 /* LocationStore.swift */; };
-		CB4B28462382792D00E11A47 /* infoAPP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B28452382792D00E11A47 /* infoAPP.swift */; };
+		CB4B28462382792D00E11A47 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B28452382792D00E11A47 /* Setting.swift */; };
+		CB4B28482383B7F800E11A47 /* InfoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B28472383B7F800E11A47 /* InfoApp.swift */; };
 		CBD896C8237A78AC008CF480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896C7237A78AC008CF480 /* AppDelegate.swift */; };
 		CBD896CA237A78AC008CF480 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896C9237A78AC008CF480 /* SceneDelegate.swift */; };
 		CBD896CC237A78AC008CF480 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896CB237A78AC008CF480 /* ContentView.swift */; };
@@ -24,8 +25,9 @@
 		06C004D5D86014509AFF47F7 /* Pods_maproadpit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_maproadpit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		100698BE8256DAC42D98FF05 /* Pods-maproadpit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-maproadpit.release.xcconfig"; path = "Target Support Files/Pods-maproadpit/Pods-maproadpit.release.xcconfig"; sourceTree = "<group>"; };
 		CB4B284323825F6600E11A47 /* LocationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStore.swift; sourceTree = "<group>"; };
-		CB4B28452382792D00E11A47 /* infoAPP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoAPP.swift; sourceTree = "<group>"; };
-		CBD896C4237A78AC008CF480 /* maproadpit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maproadpit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4B28452382792D00E11A47 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		CB4B28472383B7F800E11A47 /* InfoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoApp.swift; sourceTree = "<group>"; };
+		CBD896C4237A78AC008CF480 /* Карта ям.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Карта ям.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD896C7237A78AC008CF480 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD896C9237A78AC008CF480 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CBD896CB237A78AC008CF480 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,7 +83,7 @@
 		CBD896C5237A78AC008CF480 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CBD896C4237A78AC008CF480 /* maproadpit.app */,
+				CBD896C4237A78AC008CF480 /* Карта ям.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,7 +97,8 @@
 				CBD896DE237A813B008CF480 /* MapView.swift */,
 				CB4B284323825F6600E11A47 /* LocationStore.swift */,
 				CBD896CB237A78AC008CF480 /* ContentView.swift */,
-				CB4B28452382792D00E11A47 /* infoAPP.swift */,
+				CB4B28452382792D00E11A47 /* Setting.swift */,
+				CB4B28472383B7F800E11A47 /* InfoApp.swift */,
 				CBD896CD237A78B0008CF480 /* Assets.xcassets */,
 				CBD896D2237A78B0008CF480 /* LaunchScreen.storyboard */,
 				CBD896DB237A795F008CF480 /* GoogleService-Info.plist */,
@@ -134,7 +137,7 @@
 			packageProductDependencies = (
 			);
 			productName = maproadpit;
-			productReference = CBD896C4237A78AC008CF480 /* maproadpit.app */;
+			productReference = CBD896C4237A78AC008CF480 /* Карта ям.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -238,7 +241,8 @@
 				CBD896DF237A813B008CF480 /* MapView.swift in Sources */,
 				CBD896CA237A78AC008CF480 /* SceneDelegate.swift in Sources */,
 				CBD896CC237A78AC008CF480 /* ContentView.swift in Sources */,
-				CB4B28462382792D00E11A47 /* infoAPP.swift in Sources */,
+				CB4B28482383B7F800E11A47 /* InfoApp.swift in Sources */,
+				CB4B28462382792D00E11A47 /* Setting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +381,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = maproadpit/maproadpit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"maproadpit/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -386,7 +391,8 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.maproadpit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Карта ям";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -399,6 +405,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = maproadpit/maproadpit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"maproadpit/Preview Content\"";
 				DEVELOPMENT_TEAM = 48HFZR3X8K;
 				ENABLE_PREVIEWS = YES;
@@ -408,7 +415,8 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkfox.maproadpit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Карта ям";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
