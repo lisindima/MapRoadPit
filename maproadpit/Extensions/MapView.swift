@@ -79,26 +79,20 @@ struct MapView: UIViewRepresentable {
     }
 }
 
-import SwiftUI
-import MapKit
-
 struct NewMapView: UIViewRepresentable {
+    
+    @State private var latitude: Double = 53.3464
+    @State private var longitude: Double = 83.46102
+    
     func makeUIView(context: Context) -> MKMapView {
         MKMapView(frame: .zero)
     }
 
     func updateUIView(_ view: MKMapView, context: Context) {
         let coordinate = CLLocationCoordinate2D(
-            latitude: 34.011286, longitude: -116.166868)
+            latitude: latitude, longitude: longitude)
         let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         view.setRegion(region, animated: true)
     }
 }
-
-struct NewMapView_Preview: PreviewProvider {
-    static var previews: some View {
-        NewMapView()
-    }
-}
-

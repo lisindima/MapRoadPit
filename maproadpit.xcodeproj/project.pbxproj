@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,10 @@
 		CB4B284423825F6600E11A47 /* LocationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B284323825F6600E11A47 /* LocationStore.swift */; };
 		CB4B28462382792D00E11A47 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B28452382792D00E11A47 /* Setting.swift */; };
 		CB4B28482383B7F800E11A47 /* InfoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B28472383B7F800E11A47 /* InfoApp.swift */; };
+		CB4B284C2384E56100E11A47 /* CustomInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B284B2384E56100E11A47 /* CustomInput.swift */; };
+		CB4B28502384E81F00E11A47 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B284F2384E81F00E11A47 /* CustomButton.swift */; };
+		CB4B28532384EAC900E11A47 /* KeyboardObserving in Frameworks */ = {isa = PBXBuildFile; productRef = CB4B28522384EAC900E11A47 /* KeyboardObserving */; };
+		CB4B28552384F66700E11A47 /* YandexGeoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B28542384F66700E11A47 /* YandexGeoModel.swift */; };
 		CBD896C8237A78AC008CF480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896C7237A78AC008CF480 /* AppDelegate.swift */; };
 		CBD896CA237A78AC008CF480 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896C9237A78AC008CF480 /* SceneDelegate.swift */; };
 		CBD896CC237A78AC008CF480 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896CB237A78AC008CF480 /* ContentView.swift */; };
@@ -27,6 +31,9 @@
 		CB4B284323825F6600E11A47 /* LocationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStore.swift; sourceTree = "<group>"; };
 		CB4B28452382792D00E11A47 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		CB4B28472383B7F800E11A47 /* InfoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoApp.swift; sourceTree = "<group>"; };
+		CB4B284B2384E56100E11A47 /* CustomInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInput.swift; sourceTree = "<group>"; };
+		CB4B284F2384E81F00E11A47 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		CB4B28542384F66700E11A47 /* YandexGeoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexGeoModel.swift; sourceTree = "<group>"; };
 		CBD896C4237A78AC008CF480 /* Карта ям.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Карта ям.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD896C7237A78AC008CF480 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD896C9237A78AC008CF480 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B00C8F76B951789A3052C073 /* Pods_maproadpit.framework in Frameworks */,
+				CB4B28532384EAC900E11A47 /* KeyboardObserving in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +76,25 @@
 				06C004D5D86014509AFF47F7 /* Pods_maproadpit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB4B284D2384E59300E11A47 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CBD896DE237A813B008CF480 /* MapView.swift */,
+				CB4B284B2384E56100E11A47 /* CustomInput.swift */,
+				CB4B284F2384E81F00E11A47 /* CustomButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CB4B284E2384E5AD00E11A47 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CBD896C7237A78AC008CF480 /* AppDelegate.swift */,
+				CBD896C9237A78AC008CF480 /* SceneDelegate.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		CBD896BB237A78AC008CF480 = {
@@ -92,11 +119,11 @@
 			isa = PBXGroup;
 			children = (
 				CBD896E3237AAA90008CF480 /* maproadpit.entitlements */,
-				CBD896C7237A78AC008CF480 /* AppDelegate.swift */,
-				CBD896C9237A78AC008CF480 /* SceneDelegate.swift */,
-				CBD896DE237A813B008CF480 /* MapView.swift */,
-				CB4B284323825F6600E11A47 /* LocationStore.swift */,
+				CB4B284D2384E59300E11A47 /* Extensions */,
+				CB4B284E2384E5AD00E11A47 /* Support */,
 				CBD896CB237A78AC008CF480 /* ContentView.swift */,
+				CB4B28542384F66700E11A47 /* YandexGeoModel.swift */,
+				CB4B284323825F6600E11A47 /* LocationStore.swift */,
 				CB4B28452382792D00E11A47 /* Setting.swift */,
 				CB4B28472383B7F800E11A47 /* InfoApp.swift */,
 				CBD896CD237A78B0008CF480 /* Assets.xcassets */,
@@ -135,6 +162,7 @@
 			);
 			name = maproadpit;
 			packageProductDependencies = (
+				CB4B28522384EAC900E11A47 /* KeyboardObserving */,
 			);
 			productName = maproadpit;
 			productReference = CBD896C4237A78AC008CF480 /* Карта ям.app */;
@@ -165,6 +193,7 @@
 			);
 			mainGroup = CBD896BB237A78AC008CF480;
 			packageReferences = (
+				CB4B28512384EAC900E11A47 /* XCRemoteSwiftPackageReference "KeyboardObserving" */,
 			);
 			productRefGroup = CBD896C5237A78AC008CF480 /* Products */;
 			projectDirPath = "";
@@ -238,11 +267,14 @@
 			files = (
 				CB4B284423825F6600E11A47 /* LocationStore.swift in Sources */,
 				CBD896C8237A78AC008CF480 /* AppDelegate.swift in Sources */,
+				CB4B28502384E81F00E11A47 /* CustomButton.swift in Sources */,
 				CBD896DF237A813B008CF480 /* MapView.swift in Sources */,
 				CBD896CA237A78AC008CF480 /* SceneDelegate.swift in Sources */,
 				CBD896CC237A78AC008CF480 /* ContentView.swift in Sources */,
 				CB4B28482383B7F800E11A47 /* InfoApp.swift in Sources */,
 				CB4B28462382792D00E11A47 /* Setting.swift in Sources */,
+				CB4B28552384F66700E11A47 /* YandexGeoModel.swift in Sources */,
+				CB4B284C2384E56100E11A47 /* CustomInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +476,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB4B28512384EAC900E11A47 /* XCRemoteSwiftPackageReference "KeyboardObserving" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nickffox/KeyboardObserving";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB4B28522384EAC900E11A47 /* KeyboardObserving */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB4B28512384EAC900E11A47 /* XCRemoteSwiftPackageReference "KeyboardObserving" */;
+			productName = KeyboardObserving;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBD896BC237A78AC008CF480 /* Project object */;
 }

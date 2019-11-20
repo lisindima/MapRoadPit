@@ -24,16 +24,29 @@ final class LocationStore: ObservableObject {
             }
             for i in querySnapshot!.documentChanges {
                 if i.type == .added {
-                    let geopoint = i.document.get("geopoint") as? GeoPoint
-                    let latitudeDB = geopoint!.latitude
-                    let longitudeDB = geopoint!.longitude
-                    let locationDB = CLLocationCoordinate2D(latitude: latitudeDB, longitude: longitudeDB)
+                    //let geopoint = i.document.get("geopoint") as? GeoPoint
+                    let latitudeDB = i.document.get("latitude") as? Double
+                    let longitudeDB = i.document.get("longitude") as? Double
+                    //let latitudeDB = geopoint!.latitude
+                    //let longitudeDB = geopoint!.longitude
+                    let locationDB = CLLocationCoordinate2D(latitude: latitudeDB!, longitude: longitudeDB!)
                     let nameDB = i.document.get("nameDB") as? String
                     let id = i.document.documentID
                     self.dataLocation.append(DataLocation(id: id, nameDB: nameDB!, locationDB: locationDB))
                     print(self.dataLocation)
                 }
             }
+        }
+    }
+    
+    func addData(nameDB: String, geopoint: String) {
+        let db = Firestore.firestore()
+        db.collection("dataPit").document("listPit").collection("pit").addDocument(data: ["nameDB": nameDB, "geopoint": geopoint]) { (err) in
+        if err != nil {
+            print((err?.localizedDescription)!)
+            return
+        }
+            print("success")
         }
     }
 }
