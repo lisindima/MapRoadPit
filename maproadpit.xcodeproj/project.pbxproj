@@ -15,6 +15,9 @@
 		CB4B28552384F66700E11A47 /* YandexGeoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4B28542384F66700E11A47 /* YandexGeoModel.swift */; };
 		CB92B82D23862D0300236DDE /* CustomInput in Frameworks */ = {isa = PBXBuildFile; productRef = CB92B82C23862D0300236DDE /* CustomInput */; };
 		CB92B83023862D2E00236DDE /* CustomButton in Frameworks */ = {isa = PBXBuildFile; productRef = CB92B82F23862D2E00236DDE /* CustomButton */; };
+		CB92B8322386430B00236DDE /* NewPit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92B8312386430B00236DDE /* NewPit.swift */; };
+		CB92B83423864D6200236DDE /* ListPit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92B83323864D6200236DDE /* ListPit.swift */; };
+		CB92B83623864F5700236DDE /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB92B83523864F5700236DDE /* ListItem.swift */; };
 		CBD896C8237A78AC008CF480 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896C7237A78AC008CF480 /* AppDelegate.swift */; };
 		CBD896CA237A78AC008CF480 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896C9237A78AC008CF480 /* SceneDelegate.swift */; };
 		CBD896CC237A78AC008CF480 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD896CB237A78AC008CF480 /* ContentView.swift */; };
@@ -32,6 +35,9 @@
 		CB4B28452382792D00E11A47 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		CB4B28472383B7F800E11A47 /* InfoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoApp.swift; sourceTree = "<group>"; };
 		CB4B28542384F66700E11A47 /* YandexGeoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexGeoModel.swift; sourceTree = "<group>"; };
+		CB92B8312386430B00236DDE /* NewPit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPit.swift; sourceTree = "<group>"; };
+		CB92B83323864D6200236DDE /* ListPit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPit.swift; sourceTree = "<group>"; };
+		CB92B83523864F5700236DDE /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		CBD896C4237A78AC008CF480 /* Карта ям.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Карта ям.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD896C7237A78AC008CF480 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD896C9237A78AC008CF480 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +126,9 @@
 				CB4B284D2384E59300E11A47 /* Extensions */,
 				CB4B284E2384E5AD00E11A47 /* Support */,
 				CBD896CB237A78AC008CF480 /* ContentView.swift */,
+				CB92B83323864D6200236DDE /* ListPit.swift */,
+				CB92B83523864F5700236DDE /* ListItem.swift */,
+				CB92B8312386430B00236DDE /* NewPit.swift */,
 				CB4B28542384F66700E11A47 /* YandexGeoModel.swift */,
 				CB4B284323825F6600E11A47 /* LocationStore.swift */,
 				CB4B28452382792D00E11A47 /* Setting.swift */,
@@ -269,12 +278,15 @@
 			files = (
 				CB4B284423825F6600E11A47 /* LocationStore.swift in Sources */,
 				CBD896C8237A78AC008CF480 /* AppDelegate.swift in Sources */,
+				CB92B8322386430B00236DDE /* NewPit.swift in Sources */,
 				CBD896DF237A813B008CF480 /* MapView.swift in Sources */,
+				CB92B83623864F5700236DDE /* ListItem.swift in Sources */,
 				CBD896CA237A78AC008CF480 /* SceneDelegate.swift in Sources */,
 				CBD896CC237A78AC008CF480 /* ContentView.swift in Sources */,
 				CB4B28482383B7F800E11A47 /* InfoApp.swift in Sources */,
 				CB4B28462382792D00E11A47 /* Setting.swift in Sources */,
 				CB4B28552384F66700E11A47 /* YandexGeoModel.swift in Sources */,
+				CB92B83423864D6200236DDE /* ListPit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

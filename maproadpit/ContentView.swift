@@ -36,7 +36,6 @@ struct ContentView: View {
                     }
                 }
             }
-            .onAppear(perform: session.loadData)
             .navigationBarTitle("Главная")
             .navigationBarItems(leading: Button (action: {
                 self.choiseModal = 3
@@ -64,83 +63,17 @@ struct ContentView: View {
                 }
             }, content: {
                 if self.choiseModal == 1 {
-                    listPit(modalView: self.$modalView)
+                    ListPit(modalView: self.$modalView)
                         .environmentObject(LocationStore())
                 }
                 if self.choiseModal == 2 {
-                    newPit(modalView: self.$modalView)
+                    NewPit(modalView: self.$modalView)
                         .environmentObject(LocationStore())
                 }
                 if self.choiseModal == 3 {
                     Setting(modalView: self.$modalView)
                         .environmentObject(LocationStore())
                 }
-            })
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
-    }
-}
-
-
-struct listPit: View {
-    @Binding var modalView: Bool
-    var body: some View {
-        NavigationView {
-            ScrollView {
-                Text("listPit")
-            }
-        }
-    }
-}
-
-struct newPit: View {
-    
-    @EnvironmentObject var session: LocationStore
-    @Binding var modalView: Bool
-    @State private var geopoint: String = ""
-    @State private var name: String = ""
-    @State private var razmer: String = ""
-    @State private var latitude: String = ""
-    @State private var longitude: String = ""
-    
-    func savePit() {
-        print("ddd")
-        //session.addData(nameDB: name, geopoint: geopoint)
-    }
-    
-    var body: some View {
-        NavigationView {
-            VStack {
-                ScrollView {
-                    NewMapView()
-                        .edgesIgnoringSafeArea(.top)
-                        .frame(height: 300)
-                    CustomInput(text: self.$name, name: "Опишите проблему")
-                        .padding([.horizontal, .top])
-                    CustomInput(text: self.$geopoint, name: "Укажите адрес или координаты")
-                        .padding([.horizontal, .top])
-                    HStack {
-                        CustomInput(text: self.$latitude, name: "Широта")
-                            .padding(.trailing, 5)
-                        CustomInput(text: self.$longitude, name: "Долгота")
-                            .padding(.leading, 5)
-                    }.padding([.horizontal, .top])
-                    CustomInput(text: self.$razmer, name: "Укажите размер")
-                        .padding([.horizontal, .top])
-                }
-                CustomButton(
-                    label: "Сохранить",
-                    action: savePit
-                ).padding()
-            }
-            .keyboardObserving()
-            .navigationBarTitle(Text("Добавить"), displayMode: .inline)
-            .navigationBarItems(trailing: Button (action: {
-                self.modalView = false
-            })
-            {
-                Text("Закрыть")
-                    .bold()
             })
         }
         .navigationViewStyle(StackNavigationViewStyle())
