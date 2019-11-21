@@ -9,6 +9,8 @@
 import SwiftUI
 import CoreLocation
 import KeyboardObserving
+import CustomButton
+import CustomInput
 
 struct ContentView: View {
     
@@ -103,7 +105,7 @@ struct newPit: View {
     
     func savePit() {
         print("ddd")
-        session.addData(nameDB: name, geopoint: geopoint)
+        //session.addData(nameDB: name, geopoint: geopoint)
     }
     
     var body: some View {

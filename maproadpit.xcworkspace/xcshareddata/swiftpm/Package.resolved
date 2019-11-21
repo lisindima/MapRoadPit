@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "CustomButton",
+        "repositoryURL": "https://github.com/lisindima/CustomButton",
+        "state": {
+          "branch": null,
+          "revision": "47e7dea3f98dc68533f20953e1a971333c6f0741",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "CustomInput",
+        "repositoryURL": "https://github.com/lisindima/CustomInput",
+        "state": {
+          "branch": null,
+          "revision": "af18b8644fb49fc4c47ced0cdab345b77ab33140",
+          "version": "1.0.2"
+        }
+      },
+      {
         "package": "KeyboardObserving",
         "repositoryURL": "https://github.com/nickffox/KeyboardObserving",
         "state": {
