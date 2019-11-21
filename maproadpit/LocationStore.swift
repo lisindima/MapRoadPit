@@ -30,7 +30,7 @@ final class LocationStore: ObservableObject {
                 if i.type == .added {
                     let latitudeDB = i.document.get("latitude") as? Double
                     let longitudeDB = i.document.get("longitude") as? Double
-                    let locationDB = CLLocationCoordinate2D(latitude: latitudeDB!, longitude: longitudeDB!)
+                    let locationDB = CLLocationCoordinate2D(latitude: latitudeDB ?? 0.0, longitude: longitudeDB ?? 0.0)
                     let nameDB = i.document.get("nameDB") as? String
                     let id = i.document.documentID
                     self.dataLocation.append(DataLocation(id: id, nameDB: nameDB!, locationDB: locationDB))
