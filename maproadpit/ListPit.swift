@@ -33,8 +33,15 @@ struct ListPit: View {
                 .onDelete(perform: delete)
                 .onMove(perform: move)
             }
-        .navigationBarTitle(Text("Список"), displayMode: .inline)
-        .navigationBarItems(trailing: EditButton())
+            .navigationBarTitle(Text("Список"), displayMode: .inline)
+            .navigationBarItems(leading: EditButton(), trailing: Button (action: {
+                self.modalView = false
+                })
+                {
+                Text("Закрыть")
+                    .bold()
+            })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

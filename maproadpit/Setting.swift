@@ -22,6 +22,9 @@ struct Setting: View {
                     NavigationLink(destination: InfoApp()) {
                         Text("О приложении")
                     }
+                    NavigationLink(destination: MotionTest(motion: MotionManager())) {
+                        Text("Тест")
+                    }
                 }
             }
             .navigationBarTitle(Text("Настройки"), displayMode: .inline)
@@ -29,9 +32,10 @@ struct Setting: View {
                 self.modalView = false
             })
             {
-                Text("Готово")
+                Text("Закрыть")
                     .bold()
             })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

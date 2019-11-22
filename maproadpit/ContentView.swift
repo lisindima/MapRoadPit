@@ -9,8 +9,7 @@
 import SwiftUI
 import CoreLocation
 import KeyboardObserving
-import CustomButton
-import CustomInput
+import CoreMotion
 
 struct ContentView: View {
     

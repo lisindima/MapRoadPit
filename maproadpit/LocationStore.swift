@@ -50,6 +50,17 @@ final class LocationStore: ObservableObject {
             print("success")
         }
     }
+    
+    func deleteData(id: String) {
+        let db = Firestore.firestore()
+        db.collection("dataPit").document("listPit").collection("pit").document(id).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+    }
 }
 
 struct DataLocation: Identifiable {

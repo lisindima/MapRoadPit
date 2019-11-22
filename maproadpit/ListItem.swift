@@ -41,5 +41,6 @@ struct ListDetails: View {
             Spacer()
             //Text(location)
         }
+        .navigationBarTitle(Text("Детали"), displayMode: .inline)
     }
 }

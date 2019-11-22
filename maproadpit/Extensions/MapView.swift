@@ -8,6 +8,7 @@
 
 import SwiftUI
 import MapKit
+import UIKit
 
 final class LandmarkAnnotation: NSObject, MKAnnotation {
     let id: String
@@ -66,6 +67,12 @@ struct MapView: UIViewRepresentable {
                 annotationView?.annotation = annotation
             }
             return annotationView
+        }
+        
+        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            let landmark = view.annotation as! LandmarkAnnotation
+            let placeName = landmark.title
+            print(placeName!)
         }
     }
     
