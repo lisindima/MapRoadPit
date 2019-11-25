@@ -22,6 +22,9 @@ struct Setting: View {
                     NavigationLink(destination: InfoApp()) {
                         Text("О приложении")
                     }
+                    NavigationLink(destination: SplashScreen()) {
+                        Text("Возможности")
+                    }
                     NavigationLink(destination: MotionTest(motion: MotionManager())) {
                         Text("Тест")
                     }

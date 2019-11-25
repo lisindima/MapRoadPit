@@ -36,8 +36,8 @@ struct ListPit: View {
             .navigationBarTitle(Text("Список"), displayMode: .inline)
             .navigationBarItems(leading: EditButton(), trailing: Button (action: {
                 self.modalView = false
-                })
-                {
+            })
+            {
                 Text("Закрыть")
                     .bold()
             })
