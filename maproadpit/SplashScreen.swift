@@ -76,9 +76,9 @@ struct TitleView: View {
                 .accessibility(hidden: true)
                 .cornerRadius(30)
                 .shadow(radius: 10)
-            Text("Welcome to")
+            Text("Карта")
                 .customTitleText()
-            Text("Gradients Game")
+            Text("ЯМ")
                 .customTitleText()
                 .foregroundColor(.mainColor)
         }

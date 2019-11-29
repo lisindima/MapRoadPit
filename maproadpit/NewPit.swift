@@ -23,6 +23,8 @@ struct NewPit: View {
     func savePit() {
         let lat = (latitude as NSString).doubleValue
         let lon = (longitude as NSString).doubleValue
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
         session.addData(nameDB: name, latitude: lat, longitude: lon)
         self.modalView = false
     }
