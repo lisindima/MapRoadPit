@@ -91,6 +91,9 @@ struct NewMapView: UIViewRepresentable {
     @State private var latitude: Double = 53.3464
     @State private var longitude: Double = 83.46102
     
+    let map = MKMapView()
+    let manager = CLLocationManager()
+    
     func makeUIView(context: Context) -> MKMapView {
         MKMapView(frame: .zero)
     }
@@ -98,8 +101,11 @@ struct NewMapView: UIViewRepresentable {
     func updateUIView(_ view: MKMapView, context: Context) {
         let coordinate = CLLocationCoordinate2D(
             latitude: latitude, longitude: longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
+        let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
         let region = MKCoordinateRegion(center: coordinate, span: span)
+        manager.startUpdatingLocation()
+        map.showsUserLocation = true
+        manager.requestWhenInUseAuthorization()
         view.setRegion(region, animated: true)
     }
 }
