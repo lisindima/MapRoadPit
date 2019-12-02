@@ -18,6 +18,19 @@ struct ContentView: View {
     @State private var modalView: Bool = false
     @State private var choiseModal: Int = 1
     
+    func funcSplashScreen() {
+        let defaults = UserDefaults.standard
+            if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+                print("НЕ первый запуск")
+                self.modalView = false
+            }else{
+                defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+                print("Первый запуск")
+                self.choiseModal = 4
+                self.modalView = true
+        }
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -53,12 +66,19 @@ struct ContentView: View {
             .sheet(isPresented: $modalView, onDismiss: {
                 if self.choiseModal == 1 {
                     self.modalView = false
+                    self.choiseModal = 1
                 }
                 if self.choiseModal == 2 {
                     self.modalView = false
+                    self.choiseModal = 1
                 }
                 if self.choiseModal == 3 {
                     self.modalView = false
+                    self.choiseModal = 1
+                }
+                if self.choiseModal == 4 {
+                    self.modalView = false
+                    self.choiseModal = 1
                 }
             }, content: {
                 if self.choiseModal == 1 {
@@ -73,8 +93,12 @@ struct ContentView: View {
                     Setting(modalView: self.$modalView)
                         .environmentObject(LocationStore())
                 }
+                if self.choiseModal == 4 {
+                    SplashScreen()
+                }
             })
         }
+        .onAppear(perform: funcSplashScreen)
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
